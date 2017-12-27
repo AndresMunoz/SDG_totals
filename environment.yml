@@ -1,6 +1,0 @@
-name: heroku-arcgis
-dependencies:
-  # bind notebook version (compatibility to pgcontents)
-  - notebook
-  - requests
-  - ipython
