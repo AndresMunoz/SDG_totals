@@ -14,7 +14,7 @@ def getSDGs():
 
     for IDs in departmentsIDs:
         listSDG = []
-        relatedActions = departmentsFL.query_related_records(IDs, '0', out_fields='SDG', return_geometry=False)
+        relatedActions = departmentsFL.query_related_records(IDs, '1', out_fields='SDG', return_geometry=False)
         for SDG in relatedActions['relatedRecordGroups'][0]['relatedRecords']:
             listSDG.append(SDG['attributes']['SDG'])
         departmentsDic[str(IDs)] = listSDG
