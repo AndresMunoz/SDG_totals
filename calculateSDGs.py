@@ -2,7 +2,7 @@ import arcgis
 
 # Url de prueba
 # URL = 'https://services1.arcgis.com/k8WRSCmxGgCwZufI/ArcGIS/rest/services/Departments/FeatureServer/1'
-URL = https://services1.arcgis.com/k8WRSCmxGgCwZufI/ArcGIS/rest/services/SDGs/FeatureServer/1 #original SDG url
+URL = 'https://services1.arcgis.com/k8WRSCmxGgCwZufI/ArcGIS/rest/services/SDGs/FeatureServer/1'
 
 departmentsFL = arcgis.features.FeatureLayer(URL) # Create the feature layer object
 
