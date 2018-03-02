@@ -80,8 +80,7 @@ break3 = int(resultSorted[4])
 label3 = str(break2) + " - " + str(break3)
 
 # bring webmap
-webmapItem = "6ed1633b7839452fbd81455c411d22ab"
-
+webmapItem = '6ed1633b7839452fbd81455c411d22ab'
 item = arcgis.gis.Item(gisuser, webmapItem, itemdict=None)
 totalActionsMap = arcgis.mapping.WebMap(item)
 
