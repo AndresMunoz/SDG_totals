@@ -1,4 +1,8 @@
-import arcgis
+from arcgis.gis import GIS
+from arcgis.gis import Item
+from arcgis.mapping import WebMap
+from arcgis.features import FeatureLayer
+
 
 def getJenksBreaks( dataList, numClass ):
     dataList.sort()
@@ -54,10 +58,10 @@ def getJenksBreaks( dataList, numClass ):
     return kclass
 
 
-gisuser = arcgis.gis.GIS(username="un_haiti", password="ubikgsuj1")
+gisuser = GIS(username="un_haiti", password="ubikgsuj1")
 URL = 'https://services8.arcgis.com/iMDawfh419rT2dQQ/arcgis/rest/services/SDGs/FeatureServer/1'
 
-departmentsFL = arcgis.features.FeatureLayer(URL, gis=gisuser) # Create the feature layer object
+departmentsFL = FeatureLayer(URL, gis=gisuser) # Create the feature layer object
 departmentsTotals = departmentsFL.query(return_geometry=False, out_fields='SDG_Totals')
 totalsDictionary = departmentsTotals.to_dict()
 
@@ -81,8 +85,8 @@ label3 = str(break2) + " - " + str(break3)
 
 # bring webmap
 webmapItem = '6ed1633b7839452fbd81455c411d22ab'
-item = arcgis.gis.Item(gisuser, webmapItem, itemdict=None)
-totalActionsMap = arcgis.mapping.WebMap(item)
+item = Item(gisuser, webmapItem, itemdict=None)
+totalActionsMap = WebMap(item)
 
 # modify webmap
 # breaks
